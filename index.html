@@ -365,7 +365,11 @@
     <div class="is-vcentered interpolation-panel">
       <div class="content has-text-centered">
         <p style = "font-size: 18px">
-          Our method consisits of offline learning and online adaptation.
+          Our method consisits of offline learning and online adaptation. First we collect datasets which consist of camera images and projected
+          map images. Then we feed the data to the value function network and perform offline MC learning, where
+          the camera image and map projection image are sent to the encoders in parallel and then aggregated together to obtain the state value
+          function. During the online deployment, we perform one additional TD adaptation step and get the final value function estimation for the
+          robot to determine how good the current state is.
         </p>
       </div>
     </div>
