@@ -252,7 +252,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           Autonomous exploration has many important applications. However, classic information gain-based or frontier-based exploration only relies on the robot current state to determine the immediate exploration goal, 
           which lacks the capability of predicting the value of future states and thus leads to inefficient exploration decisions. This paper presents a method to learn how ``good'' states are, measured by the state value function, 
@@ -294,6 +294,141 @@
   </div>
 </section> -->
 
+
+
+<!-- Method section -->
+
+<!-- <br> -->
+<section, class="section">
+<div class="columns is-centered">
+  <div class="container">
+  <div class="column is-full-width">
+    <h2 class="title is-2", style="text-align: center;">Method Overview</h2>
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/method_website.gif" style="width: 80.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <div class="is-vcentered interpolation-panel">
+      <div class="content has-text-centered">
+        <p style = "font-size: 18px">
+          Our method consisits of offline learning and online adaptation. First we collect datasets which consist of camera images and projected
+          map images. Then we feed the data to the value function network and perform offline MC learning, where
+          the camera image and map projection image are sent to the encoders in parallel and then aggregated together to obtain the state value
+          function. During the online deployment, we perform one additional TD adaptation step and get the refined value function.
+        </p>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+<!-- Datasets -->
+
+<!-- <br> -->
+<section, class="section">
+<div class="columns is-centered">
+  <div class="container">
+  <div class="column is-full-width">
+    <h2 class="title is-2", style="text-align: center;">Datasets Collection Environments </h2>
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/snapshots.pdf.png" style="width: 80.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <div class="is-vcentered interpolation-panel">
+      <div class="content has-text-centered">
+        <p style = "font-size: 18px">
+          Snapshots of the data collection environments. Here we show the 3D reconstructed occupancy grid map as well as the captured 
+          images captured (At the corner of each subfigure) during exploration. 
+          From left to right and top to bottom:  Auditorium corridor, Large open room, Limestone mine and Natural cave.
+        </p>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+
+<!-- experiment results section -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-2">Experimental Results</h2>
+
+        <h3 class="title is-3">Regret Analysis in Corridor Environment</h3>
+        <div class="content has-text-justified">
+          <p align="center" >
+            With the learned value function, robot could make better decisions.
+          </p>
+        </div>
+        <div class="publication-video">
+          <iframe src="https://drive.google.com/file/d/1bq3Ax1zw7kh9uM3DT5zbtwKWP3PyBj9S/preview" width="640" height="480" allow="autoplay"></iframe>
+        </div>
+
+        &nbsp;
+
+        <h3 class="title is-3">In Cave Environment</h3>
+        <div class="content has-text-justified">
+          <!-- <p align="center" >
+            With the learned value function, robot could make better decisions.
+          </p> -->
+        </div>
+        <div class="publication-video">
+          <iframe src="https://drive.google.com/file/d/1gtuopuuzTLlTl83fcYcF9Skqv0c00Nlx/preview" width="640" height="480" allow="autoplay"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- quan result section -->
+
+<!-- <br> -->
+<section, class="section">
+<div class="columns is-centered">
+  <div class="container">
+  <div class="column is-full-width">
+    <h2 class="title is-3", style="text-align: center;">Quantative Results</h2>
+    <tr>
+      <td>
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <img src="./resources/quan_results_all_website.png" style="width: 80.0%;"></img>
+        </div>
+      </td>
+    </tr>
+    <div class="is-vcentered interpolation-panel">
+      <div class="content has-text-centered">
+        <p style = "font-size: 18px">
+          We compare our approach with other SOTA OPE methods.
+        </p>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+<!-- real robot results section -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -390,141 +525,9 @@
 </section>
 
 
-<!-- Method section -->
-
-<!-- <br> -->
-<section, class="section">
-<div class="columns is-centered">
-  <div class="container">
-  <div class="column is-full-width">
-    <h2 class="title is-3", style="text-align: center;">Method Overview</h2>
-    <tr>
-      <td>
-        <br>
-        <div class="columns is-centered has-text-centered">
-          <img src="./resources/method_website.gif" style="width: 80.0%;"></img>
-        </div>
-      </td>
-    </tr>
-    <div class="is-vcentered interpolation-panel">
-      <div class="content has-text-centered">
-        <p style = "font-size: 18px">
-          Our method consisits of offline learning and online adaptation. First we collect datasets which consist of camera images and projected
-          map images. Then we feed the data to the value function network and perform offline MC learning, where
-          the camera image and map projection image are sent to the encoders in parallel and then aggregated together to obtain the state value
-          function. During the online deployment, we perform one additional TD adaptation step and get the refined value function.
-        </p>
-      </div>
-    </div>
-    </div>
-</div>
-</div>
-</section>
-
-
-<!-- Datasets -->
-
-<!-- <br> -->
-<section, class="section">
-<div class="columns is-centered">
-  <div class="container">
-  <div class="column is-full-width">
-    <h2 class="title is-3", style="text-align: center;">Datasets Collection Environments </h2>
-    <tr>
-      <td>
-        <br>
-        <div class="columns is-centered has-text-centered">
-          <img src="./resources/snapshots.pdf.png" style="width: 80.0%;"></img>
-        </div>
-      </td>
-    </tr>
-    <div class="is-vcentered interpolation-panel">
-      <div class="content has-text-centered">
-        <p style = "font-size: 18px">
-          Snapshots of the data collection environments. Here we show the 3D reconstructed occupancy grid map as well as the captured 
-          images captured (At the corner of each subfigure) during exploration. 
-          From left to right and top to bottom:  Auditorium corridor, Large open room, Limestone mine and Natural cave.
-        </p>
-      </div>
-    </div>
-    </div>
-</div>
-</div>
-</section>
-
-
-<!-- Quanlitative results section -->
-
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Experimental Results</h2>
-
-        <h3 class="title is-4">Regret Analysis in Corridor Environment</h3>
-        <div class="content has-text-justified">
-          <p align="center" >
-            With the learned value function, robot could make better decisions.
-          </p>
-        </div>
-        <div class="publication-video">
-          <iframe src="https://drive.google.com/file/d/1bq3Ax1zw7kh9uM3DT5zbtwKWP3PyBj9S/preview" width="640" height="480" allow="autoplay"></iframe>
-        </div>
-
-        &nbsp;
-
-        <h3 class="title is-4">In Cave Environment</h3>
-        <div class="content has-text-justified">
-          <!-- <p align="center" >
-            With the learned value function, robot could make better decisions.
-          </p> -->
-        </div>
-        <div class="publication-video">
-          <iframe src="https://drive.google.com/file/d/1gtuopuuzTLlTl83fcYcF9Skqv0c00Nlx/preview" width="640" height="480" allow="autoplay"></iframe>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- quan result section -->
-
-<!-- <br> -->
-<section, class="section">
-<div class="columns is-centered">
-  <div class="container">
-  <div class="column is-full-width">
-    <h2 class="title is-4", style="text-align: center;">Quantative Results</h2>
-    <tr>
-      <td>
-        <br>
-        <div class="columns is-centered has-text-centered">
-          <img src="./resources/quan_results_all_website.png" style="width: 80.0%;"></img>
-        </div>
-      </td>
-    </tr>
-    <div class="is-vcentered interpolation-panel">
-      <div class="content has-text-centered">
-        <p style = "font-size: 18px">
-          We compare our approach with other SOTA OPE methods.
-        </p>
-      </div>
-    </div>
-    </div>
-</div>
-</div>
-</section>
-
-
-<!-- real robot results section -->
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-4", style="text-align: center;">Real Robot Experiments</h2>
+    <h2 class="title is-3", style="text-align: center;">Comparing with Frontier-based Method</h2>
 
     <div class="columns is-centered has-text-centered">
       
