@@ -1,4 +1,4 @@
-# opeExp
+# OPERE
 Website for the paper [Off-Policy Evaluation with Online Adaptation for Robot Exploration in Challenging Environments](https://arxiv.org/abs/2204.03140)
 
 # Reference
